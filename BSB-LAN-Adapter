@@ -1,0 +1,5 @@
+Die Kommunikation zwischen dem lokalen Netzwerk und den Heizungssteuerungen erfolgt über einen Arduino mit BSB-LAN Adapterplatine.
+
+Das Projekt ist unter dem Repository https://github.com/fredlcore/bsb_lan zu finden.
+
+Je ein Arduino mit BSB-LAN Adapter ist am Brennwertgerät und am Solarregler vorhanden.
