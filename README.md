@@ -1,10 +1,6 @@
 # Smart_Home_DIY
 How I made my dumb Home smarter
 
------------
-First to let you know, I will write down some content in german to collect the main structure of this project.
------------
-
 Unsere Immobilie wurde 1968 als Doppelhaushälfte an die bereits vorhandene Immobilie angebaut.
 
 2010 haben wir diese Doppelhaushälfte übernommen und komplett saniert.
