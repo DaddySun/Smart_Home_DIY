@@ -1,0 +1,29 @@
+Als Raumfühler verwende ich Wemos D1 mini mit DHT22 Sensoren.
+Auf dem WeMos D1 mini läuft ESPeasy.
+
+An jedem Wemos ist eine 433MHz Sendeplatine angeschlossen um nahegelegene Funksteckdosen schalten zu können.
+
+Im Erdgeschoss wurde zusätzlich ein OLED SSD1306 angeschlossen der die aktuelle Raumtemperatur von EG und OG anzeigt.
+
+
+Über die in ESPeasy integrierte Funktion "Rules" habe ich einen HTTP-Aufruf konfiguriert der die IST-Temperatur von EG und OG regelmässig an den Solarregler schickt.
+
+
+
+#### Rules 1 ####
+
+On Clock#Time=All,02:30 do // every day at 18:25 hours do ...
+Reboot
+endon
+
+On System#Boot do    //When the ESP boots, do
+ SendToHTTP 192.xxx.xxx.xxx,80,/Passcode/I10000=[DHT#temperature]
+  timerSet,1,60      //Set Timer 1 for the next event in 60seconds
+endon
+
+On Rules#Timer=1 do  //When Timer1 expires, do
+ SendToHTTP 192.xxx.xxx.xxx,80,/Passcode/I10000=[DHT#temperature]
+  timerSet,1,60       //Resets the Timer 1 for another 60 seconds
+endon
+
+####
