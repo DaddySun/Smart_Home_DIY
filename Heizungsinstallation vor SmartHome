@@ -13,15 +13,17 @@ Pufferspeicher 800Liter
 Kaminofen
 Leda Onda
 
-Das Gas-Brennwertgerät Brötje WGB-S 17/20e ist per LAN-Kabel mit einem Brötje Solarregler ISS SSR C verbunden, der die Pumpe des wassergeführten Leda Onda Kaminofens steuert.
+Das Gas-Brennwertgerät Brötje WGB-S 17/20e ist per Cat7-Kabel mit einem Brötje Solarregler ISS SSR C verbunden,
+der die Pumpe des wassergeführten Leda Onda Kaminofens steuert.
 WGB-S und ISR SSR C kommunizieren über das LPB-Protokoll.
-Der Leda Onda wird ausschliesslich mit Holz befeuert und erzeugt 3 kW Raumwärme, 7 KW werden in den 800 Liter Pufferspeicher gespeist.
-Ausserdem hat der Pufferspeicher einen zusätzlichen Wärmetauscher für eine spätere Solarthermieeinspeisung.
+Der Leda Onda wird ausschliesslich mit Holz befeuert und erzeugt 3 kW Raumwärme,
+7 kW werden in den 800 Liter Pufferspeicher gespeist.
+(Der Pufferspeicher hat einen zusätzlichen Wärmetauscher für eine optionale Solarthermieeinspeisung)
 
-Im EG (Heizkreis 1) sind 6 Räume die durch eine wassergeführte Fussbodenheizung geheizt werden.
-
+Erdgeschoss (Heizkreis 1) befinden sich 6 Räume eine wassergeführte Fussbodenheizung
 Es sind 8 FBH-Schleifen verlegt die über 6 manuelle Merten Raumthermostate auf Schalterhöhe die 220V Stellantriebe schalten.
 
 Der Pufferspeicher dient als Unterstützung für Heizkreis 1 (Fussbodenheizung).
 
-Im OG (Heizkreis 2) befinden sich 3 Räume mit je einem Radiator.
+Im Obergeschoss (Heizkreis 2) befinden sich 3 Räume mit je einem Radiator.
+Zusätzlich ist im Erdgeschoss Badezimmer ein Radiator vorhanden der ebenfalls durch HK2 gespeist wird.
