@@ -6,7 +6,8 @@ An jedem Wemos ist eine 433MHz Sendeplatine angeschlossen um nahegelegene Funkst
 Im Erdgeschoss wurde zusätzlich ein OLED SSD1306 angeschlossen der die aktuelle Raumtemperatur von EG und OG anzeigt.
 
 
-Über die in ESPeasy integrierte Funktion "Rules" habe ich einen HTTP-Aufruf konfiguriert der die IST-Temperatur von EG und OG regelmässig an den Solarregler schickt.
+Über die in ESPeasy integrierte Funktion "Rules" habe ich einen HTTP-Aufruf
+konfiguriert der die IST-Temperatur von EG und OG regelmässig per Broadcast Info über das BSB-LAN-Modul an die ISR SSR C schickt.
 
 
 
