@@ -5,6 +5,10 @@ An jedem Wemos ist eine 433MHz Sendeplatine angeschlossen um nahegelegene Funkst
 
 Im Erdgeschoss wurde zusätzlich ein OLED SSD1306 angeschlossen der die aktuelle Raumtemperatur von EG und OG anzeigt.
 
+Ein Bild des Raumfühlers wird noch folgen,
+sobald der "fliegende Aufbau" der Elektronik den Zustand "QuickandDirty" abgeschlossen hat.
+
+(Ein Schaltschema füge ich zeitnah ein. Stand 28.10.2018)
 
 Über die in ESPeasy integrierte Funktion "Rules" habe ich einen HTTP-Aufruf
 konfiguriert der die IST-Temperatur von EG und OG regelmässig per Broadcast Info über das BSB-LAN-Modul an die ISR SSR C schickt.
