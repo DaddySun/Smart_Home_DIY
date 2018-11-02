@@ -1,5 +1,5 @@
 Als Raumfühler verwende ich Wemos D1 mini mit DHT22 Sensoren.
-Auf den WeMos D1 mini läuft ESPeasy.
+Auf den Wemos D1 mini läuft ESPEasy.
 
 An jedem Wemos ist eine 433MHz Sendeplatine angeschlossen um nahegelegene Funksteckdosen zuverlässiger schalten zu können.
 
@@ -8,25 +8,50 @@ Im Erdgeschoss wurde zusätzlich ein OLED SSD1306 angeschlossen der die aktuelle
 Ein Bild des aufgebauten Raumfühlers wird noch folgen,
 sobald der "fliegende Aufbau" der Elektronik den Zustand "QuickandDirty" abgeschlossen hat.
 
-Über die in ESPeasy integrierte Funktion "Rules" habe ich einen HTTP-Aufruf
+Über die in ESPEasy integrierte Funktion "Rules" habe ich einen HTTP-Aufruf
 konfiguriert der die IST-Temperatur von EG und OG regelmässig per Broadcast Info über das BSB-LAN-Modul an die ISR SSR C schickt.
 
 
+Wemos D1 mini (mit DHT und OlED) im Erdgeschoss:
 
 #### Rules 1 ####
-
 On Clock#Time=All,02:30 do // every day at 18:25 hours do ...
 Reboot
 endon
 
 On System#Boot do    //When the ESP boots, do
- SendToHTTP 192.xxx.xxx.xxx,80,/PasscodeXYZ/I10000=[DHT#temperature]
+ SendToHTTP 192.xxx.xxx.xxx,80,/XYZ/I10000=[DHT#temperature]   
+ //sends the temperature of Device named DHT to BSB_LAN IP-Adress 192.xxx.xxx.xxx Port 80 with Passcode XYZ to Parameter I10000
   timerSet,1,60      //Set Timer 1 for the next event in 60seconds
 endon
 
 On Rules#Timer=1 do  //When Timer1 expires, do
- SendToHTTP 192.xxx.xxx.xxx,80,/PasscodeXYZ/I10000=[DHT#temperature]
+ SendToHTTP 192.xxx.xxx.xxx,80,/XYZ/I10000=[DHT#temperature]
   timerSet,1,60       //Resets the Timer 1 for another 60 seconds
 endon
 
 ####
+
+
+Wemos D1 mini mit DHT im Obergeschoss:
+#### Rules 1 ####
+
+On Clock#Time=All,02:30 do         // every day at 2:30 hours do ...
+Reboot
+endon
+
+On System#Boot do                  // when the ESP boots, do
+ SendToHTTP 192.xxx.xxx.xxx,80,/XYZ/I10001=[DHT#temperature]
+  timerSet,1,40                     //Set Timer 1 for the next event in 40 seconds
+endon
+
+On Rules#Timer=1 do                // when Timer 1 expires, do
+ SendToHTTP 192.xxx.xxx.xxx,80,/XYZ/I10001=[DHT#temperature]
+  timerSet,1,40                    //Resets the Timer 1 for another 40 seconds
+endon
+
+on DHT#temperature do
+SendToHTTP 192.xxx.xxx.xyz,80,/control?cmd=oled,4,1,[DHT#temperature]
+
+//sends the temperature of Device named DHT to the Wemos D1 mini (with DHT and OLED) IP-Adress 192.xxx.xxx.xyz Port 80 to OLED row 4 column 1
+endon
