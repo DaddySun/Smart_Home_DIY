@@ -15,7 +15,7 @@ konfiguriert der die IST-Temperatur von EG und OG regelmässig per Broadcast Inf
 Wemos D1 mini (mit DHT und OlED) im Erdgeschoss:
 
 #### Rules 1 ####
-On Clock#Time=All,02:30 do // every day at 18:25 hours do ...
+On Clock#Time=All,02:30 do // every day at 02:30 hours do ...
 Reboot
 endon
 
